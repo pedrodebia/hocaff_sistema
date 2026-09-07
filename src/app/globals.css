@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+/* =====================================================================
+   Sistema de identidade visual — Hocaff Engenharia
+   Os valores vêm do kit de marca. Nenhum componente escreve hexadecimal:
+   tudo passa por estes tokens.
+
+   Os nomes `primary`, `muted`, `border` etc. são os do shadcn/ui, para que
+   `npx shadcn@latest add <componente>` continue funcionando sem ajuste.
+   Os tokens `marca-*` são o acréscimo da Hocaff.
+   ===================================================================== */
+
+@theme {
+  /* ---------- Paleta primária ---------- */
+  --color-marca-azul: #0a3050;
+  --color-marca-azul-profundo: #072a3e;
+  --color-marca-verde: #00a789;
+  --color-marca-verde-claro: #4ed4c1;
+
+  /* ---------- Paleta secundária ---------- */
+  --color-marca-grafite: #1b232b;
+  --color-marca-cinza-claro: #e6e9ec;
+  --color-marca-cinza-medio: #a9a1ba;
+  --color-marca-areia: #c9bea5;
+  --color-marca-offwhite: #f5f7f8;
+
+  /* ---------- Cores de destaque ---------- */
+  --color-marca-amarelo: #ffc107;
+  --color-marca-laranja: #ff6a00;
+  --color-marca-roxo: #6c5ce7;
+
+  /* ---------- Papéis semânticos ---------- */
+  --color-background: #f5f7f8;
+  --color-foreground: #1b232b;
+
+  --color-card: #ffffff;
+  --color-card-foreground: #1b232b;
+  --color-popover: #ffffff;
+  --color-popover-foreground: #1b232b;
+
+  --color-primary: #0a3050;
+  --color-primary-foreground: #ffffff;
+
+  --color-secondary: #e6e9ec;
+  --color-secondary-foreground: #0a3050;
+
+  --color-muted: #eef1f4;
+  --color-muted-foreground: #5b6672;
+
+  --color-accent: #00a789;
+  --color-accent-foreground: #ffffff;
+
+  --color-destructive: #c0392b;
+  --color-destructive-foreground: #ffffff;
+
+  --color-border: #dde3e8;
+  --color-input: #cfd8e0;
+  --color-ring: #00a789;
+
+  /* ---------- Barra lateral ---------- */
+  --color-lateral: #072a3e;
+  --color-lateral-foreground: #cfdde5;
+  --color-lateral-ativo: #0f3d55;
+  --color-lateral-borda: #103c53;
+
+  /* ---------- Tipografia ---------- */
+  --font-titulo: var(--fonte-titulo), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--fonte-texto), ui-sans-serif, system-ui, sans-serif;
+
+  --radius: 0.5rem;
+}
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-titulo);
+  letter-spacing: -0.015em;
+}
+
+/* Foco visível e consistente — acessibilidade não é opcional. */
+:focus-visible {
+  outline: 2px solid var(--color-ring);
+  outline-offset: 2px;
+}
+
+/* Conteúdo largo rola dentro do próprio contêiner, nunca a página. */
+.rolagem-x {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
