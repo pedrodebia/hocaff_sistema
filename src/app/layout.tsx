@@ -41,6 +41,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="pt-BR"
       className={`${titulo.variable} ${texto.variable} h-full`}
+      suppressHydrationWarning
     >
       <body className="min-h-full">
         {children}
